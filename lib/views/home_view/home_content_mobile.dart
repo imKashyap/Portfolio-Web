@@ -1,5 +1,6 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_web/utils/colors.dart';
 import 'package:portfolio_web/utils/dimensions.dart';
 import 'package:portfolio_web/widgets/heading_info.dart';
 
@@ -12,7 +13,7 @@ class HomeContentMobile extends StatelessWidget {
     return Column(
       children: [
         AvatarGlow(
-          glowColor: Colors.yellow,
+          glowColor: kColorPrimary,
           endRadius: 120.0,
           duration: Duration(milliseconds: 2000),
           repeat: true,
@@ -22,10 +23,10 @@ class HomeContentMobile extends StatelessWidget {
             elevation: 8.0,
             shape: CircleBorder(),
             child: CircleAvatar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
               radius: dim.width*0.16,
               child: Image.asset(
-                'assets/images/profile.jpg',
+                'assets/images/profile1.jpg',
                 fit: BoxFit.cover,
               ),
             ),

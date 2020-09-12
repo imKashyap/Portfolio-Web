@@ -61,7 +61,7 @@ class HeadingInfo extends StatelessWidget {
                     "App Developer",
                     "Web Developer",
                     "Freelancer",
-                    "Open Source enthusiast",
+                    "Open Source Enthusiast",
                     "Competitive Coder",
                   ],
                   speed: Duration(milliseconds: 100),
@@ -72,7 +72,7 @@ class HeadingInfo extends StatelessWidget {
                           ? dim.width * 0.08
                           : dim.width * 0.04,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: kColorPrimary),
                   textAlign: TextAlign.center,
                   alignment: AlignmentDirectional.topStart // or Alignment.topLeft
                   ),
@@ -121,6 +121,7 @@ class HeadingInfo extends StatelessWidget {
 
   _buildDownloadButton() {
     return OutlineButton(
+      hoverColor: Colors.black54,
       borderSide: BorderSide(color: kColorPrimary),
       onPressed: () {},
       child: Text('Download Resume',

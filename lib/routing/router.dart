@@ -9,7 +9,6 @@ import 'package:portfolio_web/views/my_works_view/my_works_view.dart';
 import 'package:portfolio_web/views/services_view/services_view.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
-  print('generateRoute: ${settings.name}');
   switch (settings.name) {
     case HomeRoute:
       return _getPageRoute(HomeView());
