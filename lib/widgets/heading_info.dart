@@ -21,10 +21,59 @@ class HeadingInfo extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("Hi, My name is ",
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                type == ScreenType.mobile
+                    ? Column(
+            children: [
+              Text(
+                'Hi there!',
+                textScaleFactor: dim.textScaleFactor,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: type == ScreenType.mobile
+                        ? dim.width * 0.06
+                        : dim.width * 0.02),
+              ),
+              SizedBox(
+                height: 6.0,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'My name is ',
+                    textScaleFactor: dim.textScaleFactor,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: type == ScreenType.mobile
+                            ? dim.width * 0.06
+                            : dim.width * 0.02),
+                  ),
+                  Text(
+                    "Rahul Kashyap.",
+                    textScaleFactor: dim.textScaleFactor,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: kColorPrimary,
+                        fontSize: type == ScreenType.mobile
+                            ? dim.width * 0.06
+                            : dim.width * 0.02),
+                  )
+                ],
+              )
+            ],
+          )
+                    : Row(
+            children: [
+              Text('Hi there! ',
+                  textScaleFactor: dim.textScaleFactor,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: type == ScreenType.mobile
+                          ? dim.width * 0.06
+                          : dim.width * 0.02)),
+              Text(' My name is ',
                   textScaleFactor: dim.textScaleFactor,
                   style: TextStyle(
                       color: Colors.white,
@@ -43,68 +92,71 @@ class HeadingInfo extends StatelessWidget {
               )
             ],
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "I'm a ",
-                textScaleFactor: dim.textScaleFactor,
-                style: TextStyle(
-                  fontSize: type == ScreenType.mobile
-                      ? dim.width * 0.06
-                      : dim.width * 0.02,
-                  color: Colors.white,
-                ),
-              ),
-              TyperAnimatedTextKit(
-                  text: [
-                    "App Developer",
-                    "Web Developer",
-                    "Freelancer",
-                    "Open Source Enthusiast",
-                    "Competitive Coder",
-                  ],
-                  speed: Duration(milliseconds: 100),
-                  textStyle: TextStyle(
-                    
-                      fontFamily: "Lato",
-                      fontSize: type == ScreenType.mobile
-                          ? dim.width * 0.08
-                          : dim.width * 0.04,
-                      fontWeight: FontWeight.bold,
-                      color: kColorPrimary),
-                  textAlign: TextAlign.center,
-                  alignment: AlignmentDirectional.topStart // or Alignment.topLeft
-                  ),
-            ],
-          ),
-          Text(
-            'Turning caffeine into applications.',
-            textScaleFactor: dim.textScaleFactor,
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize:
-                  type == ScreenType.mobile ? dim.width * 0.04 : dim.width * 0.015,
+              ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildSocialButton(FaIcon(FontAwesomeIcons.facebookF),
-                  'https://www.facebook.com/irahulkashyap/'),
-              _buildSocialButton(FaIcon(FontAwesomeIcons.twitter),
-                  'https://twitter.com/imkashyap_'),
-              _buildSocialButton(FaIcon(FontAwesomeIcons.linkedinIn),
-                  'https://www.linkedin.com/in/rahul-kashyap-230577195/'),
-              _buildSocialButton(FaIcon(FontAwesomeIcons.instagram),
-                  'https://www.instagram.com/imkashyap__/'),
-              _buildSocialButton(FaIcon(FontAwesomeIcons.github),
-                  'https://github.com/imkashyap'),
-              _buildSocialButton(FaIcon(FontAwesomeIcons.hackerrank),
-                  ' https://www.hackerrank.com/imkashyap'),
-            ],
-          ),
-          _buildDownloadButton(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "I'm a ",
+                  textScaleFactor: dim.textScaleFactor,
+                  style: TextStyle(
+                    fontSize: type == ScreenType.mobile
+            ? dim.width * 0.06
+            : dim.width * 0.02,
+                    color: Colors.white,
+                  ),
+                ),
+                TyperAnimatedTextKit(
+                    text: [
+          "App Developer",
+          "Web Developer",
+          "Freelancer",
+          "Open Source Enthusiast",
+          "Competitive Coder",
+                    ],
+                    speed: Duration(milliseconds: 100),
+                    textStyle: TextStyle(
+            fontFamily: "Lato",
+            fontSize: type == ScreenType.mobile
+                ? dim.width * 0.08
+                : dim.width * 0.04,
+            fontWeight: FontWeight.bold,
+            color: kColorPrimary),
+                    textAlign: TextAlign.center,
+                    alignment:
+            AlignmentDirectional.topStart // or Alignment.topLeft
+                    ),
+              ],
+            ),
+            Text(
+              'Turning caffeine into applications.',
+              textScaleFactor: dim.textScaleFactor,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: type == ScreenType.mobile
+                    ? dim.width * 0.04
+                    : dim.width * 0.015,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildSocialButton(FaIcon(FontAwesomeIcons.facebookF),
+                    'https://www.facebook.com/irahulkashyap/'),
+                _buildSocialButton(FaIcon(FontAwesomeIcons.twitter),
+                    'https://twitter.com/imkashyap_'),
+                _buildSocialButton(FaIcon(FontAwesomeIcons.linkedinIn),
+                    'https://www.linkedin.com/in/rahul-kashyap-230577195/'),
+                _buildSocialButton(FaIcon(FontAwesomeIcons.instagram),
+                    'https://www.instagram.com/imkashyap__/'),
+                _buildSocialButton(FaIcon(FontAwesomeIcons.github),
+                    'https://github.com/imkashyap'),
+                _buildSocialButton(FaIcon(FontAwesomeIcons.hackerrank),
+                    ' https://www.hackerrank.com/imkashyap'),
+              ],
+            ),
+            _buildDownloadButton(),
         ],
       ),
     );
@@ -124,8 +176,10 @@ class HeadingInfo extends StatelessWidget {
       hoverColor: Colors.black54,
       borderSide: BorderSide(color: kColorPrimary),
       onPressed: () {},
-      child: Text('Download Resume',
-      style: TextStyle(color: kColorPrimary),),
+      child: Text(
+        'Download Resume',
+        style: TextStyle(color: kColorPrimary),
+      ),
     );
   }
 }

@@ -15,7 +15,7 @@ class NavBarItemTabletDesktop extends ProviderWidget<NavBarItemModel> {
       },
       child: Text(
         model.title,
-        style: TextStyle(fontSize: 18, color: Colors.white),
+        style: TextStyle(fontSize: 16, color: Colors.white),
       ),
     );
   }

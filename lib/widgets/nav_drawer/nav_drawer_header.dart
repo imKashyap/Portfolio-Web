@@ -7,7 +7,7 @@ class NavDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 70,
       color: kColorPrimary,
       alignment: Alignment.center,
       child: Column(

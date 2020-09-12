@@ -8,13 +8,10 @@ class NavigationBarTabletDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const spaceBox = SizedBox(
-      width: 30,
-    );
     return Container(
       height: 100,
       color: Colors.black.withOpacity(0.5),
-      padding: const EdgeInsets.symmetric(horizontal:50),
+      padding: const EdgeInsets.symmetric(horizontal: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -24,21 +21,15 @@ class NavigationBarTabletDesktop extends StatelessWidget {
             child: RKDot(),
           ),
           Row(
-            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              NavBarItem('Home',HomeRoute),
-              spaceBox,
-              NavBarItem('About',AboutRoute),
-               spaceBox,
-              NavBarItem('Services',ServicesRoute),
-              spaceBox,
-              NavBarItem('My Works',MyWorksRoute),
-               spaceBox,
-              NavBarItem('Endorsements',EndorsementsRoute),
-               spaceBox,
-              NavBarItem('Blogs',BlogsRoute),
-               spaceBox,
-              NavBarItem('Contact me',ContactMeRoute),
+              NavBarItem('HOME', HomeRoute),
+              NavBarItem('ABOUT', AboutRoute),
+              NavBarItem('SKILLS', SkillsRoute),
+              NavBarItem('SERVICES', ServicesRoute),
+              NavBarItem('MY WORKS', MyWorksRoute),
+              NavBarItem('ENDORSEMENTS', EndorsementsRoute),
+              NavBarItem('BLOGS', BlogsRoute),
+              NavBarItem('CONTACT ME', ContactMeRoute),
             ],
           )
         ],
@@ -46,4 +37,3 @@ class NavigationBarTabletDesktop extends StatelessWidget {
     );
   }
 }
-

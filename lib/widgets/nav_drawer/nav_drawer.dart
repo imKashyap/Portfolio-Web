@@ -22,6 +22,7 @@ class NavigationDrawer extends StatelessWidget {
           NavDrawerHeader(),
           NavBarItem('Home', HomeRoute, icon: Icons.home),
           NavBarItem('About', AboutRoute, icon: Icons.info_outline),
+          NavBarItem('Skills', SkillsRoute,icon: FontAwesomeIcons.lightbulb,),
           NavBarItem(
             'Services',
             ServicesRoute,
