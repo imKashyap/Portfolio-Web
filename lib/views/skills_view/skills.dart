@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/views/about_view/about_content_desktop.dart';
 import 'package:portfolio_web/views/about_view/about_content_mobile.dart';
+import 'package:portfolio_web/views/skills_view/skills_content_desktop.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SkillsView extends StatelessWidget {
@@ -12,7 +12,7 @@ class SkillsView extends StatelessWidget {
       color: Colors.transparent,
       child: ScreenTypeLayout(
         mobile: AboutContentMobile(),
-        desktop: AboutContentDesktop(),
+        desktop: SkillsContentDesktop(),
       ),
     );
   }

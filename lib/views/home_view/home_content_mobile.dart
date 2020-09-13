@@ -2,7 +2,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/utils/colors.dart';
 import 'package:portfolio_web/utils/dimensions.dart';
-import 'package:portfolio_web/widgets/heading_info.dart';
+import 'package:portfolio_web/views/home_view/heading_info.dart';
 
 class HomeContentMobile extends StatelessWidget {
   const HomeContentMobile({Key key}) : super(key: key);

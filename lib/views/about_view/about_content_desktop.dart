@@ -80,14 +80,14 @@ class AboutContentDesktop extends StatelessWidget {
                                     child: Text('View my works'),
                                   ),
                                   CustomButton(
-                                    type: ButtonType.raised,
+                                    type: ButtonType.outline,
                                     onPressed: () {
                                       locator<NavigationService>()
                                           .navigateTo(ContactMeRoute);
                                     },
                                     child: Text(
                                       'Hire me',
-                                      style: TextStyle(color: Colors.black),
+                                      style: TextStyle(color:kColorPrimary),
                                     ),
                                   )
                                 ],
