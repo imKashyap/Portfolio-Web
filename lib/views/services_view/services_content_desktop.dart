@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_web/utils/colors.dart';
 import 'package:portfolio_web/utils/dimensions.dart';
 import 'package:portfolio_web/utils/text_styles.dart';
-import 'package:portfolio_web/views/skills_view/cross_pattern.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ServicesContentDesktop extends StatelessWidget {
@@ -86,7 +85,10 @@ class ServicesContentDesktop extends StatelessWidget {
             ),
             Text(
               title,
-              style: TextStyle(color: Colors.white),
+              style:
+                  TextStyle(color: Colors.white, 
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w500),
             ),
             SizedBox(
                 width: 200.0,
@@ -97,6 +99,7 @@ class ServicesContentDesktop extends StatelessWidget {
               desc,
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontSize: 14.0,
                 color: Colors.white.withOpacity(0.5),
               ),
             )
