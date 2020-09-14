@@ -11,31 +11,29 @@ class HomeContentMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Dimensions dim = Dimensions(context);
     return Column(
-        children: [
-    AvatarGlow(
-      glowColor: kColorPrimary,
-      endRadius: 120.0,
-      duration: Duration(milliseconds: 2000),
-      repeat: true,
-      showTwoGlows: true,
-      repeatPauseDuration: Duration(milliseconds: 100),
-      child: Material(
-        elevation: 8.0,
-        shape: CircleBorder(),
-        child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: dim.width * 0.16,
-          child: Image.asset(
-            'assets/images/profile1.jpg',
-            fit: BoxFit.cover,
+      children: [
+        AvatarGlow(
+          glowColor: kColorPrimary,
+          endRadius: 120.0,
+          duration: Duration(milliseconds: 2000),
+          repeat: true,
+          showTwoGlows: true,
+          repeatPauseDuration: Duration(milliseconds: 100),
+          child: CircleAvatar(
+            radius: dim.width * 0.17,
+            backgroundColor: kColorPrimary,
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/profile1.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
-      ),
-    ),
-    HeadingInfo(
-      type: ScreenType.mobile,
-    ),
-        ],
-      );
+        HeadingInfo(
+          type: ScreenType.mobile,
+        ),
+      ],
+    );
   }
 }

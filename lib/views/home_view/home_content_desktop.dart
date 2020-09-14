@@ -19,12 +19,10 @@ class HomeContentDesktop extends StatelessWidget {
           repeat: true,
           showTwoGlows: true,
           repeatPauseDuration: Duration(milliseconds: 100),
-          child: Material(
-            elevation: 8.0,
-            shape: CircleBorder(),
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: dim.width * 0.1,
+          child: CircleAvatar(
+            radius: dim.width * 0.105,
+            backgroundColor: kColorPrimary,
+            child: ClipOval(
               child: Image.asset(
                 'assets/images/profile1.jpg',
                 fit: BoxFit.cover,
