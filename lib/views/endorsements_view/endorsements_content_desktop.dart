@@ -19,7 +19,18 @@ class EndorsementsContentDesktop extends StatelessWidget {
             child: Container(
                 color: Colors.black,
                 width: dim.width * 0.9,
-                child: Center(child: _buildEndorseStack())),
+                child: Center(
+                  child: Container(
+                    height: dim.height * 0.55,
+                    child: PageView.builder(
+                      itemCount: 2,
+                      controller: PageController(viewportFraction: 0.8),
+                      itemBuilder: (BuildContext context, int itemIndex) {
+                        return _buildCarouselItem(context, itemIndex);
+                      },
+                    ),
+                  ),
+                )),
           ),
         ),
         Container(
@@ -35,7 +46,23 @@ class EndorsementsContentDesktop extends StatelessWidget {
     );
   }
 
-  Stack _buildEndorseStack() {
+  Stack _buildEndorseStack(int index) {
+    String name, designation, remarks, img, url;
+    if (index == 1) {
+      name = 'Jay Tarapara';
+      designation = 'FLutter Developer';
+      remarks =
+          'A dynamic young individual with a larger than life approach. He\'s always ready to learn and help others with a smile on his face. A brilliant flutter developer obviously and good management skills too. Personally, I\'ve learnt a lot from you. ';
+      img = 'assets/images/endorse1.jpeg';
+      url = '';
+    } else {
+      name = 'Jay Tarapara';
+      designation = 'FLutter Developer';
+      remarks =
+          'A dynamic young individual with a larger than life approach. He\'s always ready to learn and help others with a smile on his face. A brilliant flutter developer obviously and good management skills too. Personally, I\'ve learnt a lot from you. ';
+      img = 'assets/images/endorse1.jpeg';
+      url = '';
+    }
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -44,7 +71,7 @@ class EndorsementsContentDesktop extends StatelessWidget {
           children: [
             Container(
               height: 300.0,
-              width: dim.width * 0.4,
+              width: dim.width * 0.3,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Colors.transparent,
@@ -73,7 +100,7 @@ class EndorsementsContentDesktop extends StatelessWidget {
                 color: kColorPrimary,
               ),
               Text(
-                'A dynamic young individual with a larger than life approach. He\'s always ready to learn and help others with a smile on his face. A brilliant flutter developer obviously and good management skills too. Personally, I\'ve learnt a lot from you. ',
+                remarks,
                 textAlign: TextAlign.center,
                 style: descriptionTextStyle(
                   DeviceScreenType.desktop,
@@ -84,18 +111,21 @@ class EndorsementsContentDesktop extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundColor: kColorPrimary,
+                    child: ClipOval(
+                      child: Image.asset(img),
+                    ),
                   ),
                   Column(
                     children: [
-                      Text('Name'),
-                      Text('Designayion'),
+                      Text(name),
+                      Text(designation),
                     ],
                   ),
                   IconButton(
                       icon: Icon(FontAwesomeIcons.linkedinIn),
                       color: Colors.white,
                       onPressed: () {
-                        launch('url');
+                        launch(url);
                       })
                 ],
               )
@@ -104,5 +134,11 @@ class EndorsementsContentDesktop extends StatelessWidget {
         )
       ],
     );
+  }
+
+  Widget _buildCarouselItem(BuildContext context, int itemIndex) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 4.0),
+        child: _buildEndorseStack(itemIndex));
   }
 }
